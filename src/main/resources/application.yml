@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: collary-rest-api
+            client-secret: FmzUdCqmQ6lzXlzdiV3O5hJ56aipbX8a
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:9090/login/oauth2/code/keycloak
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/CollaryAuthorization
+            authorization-uri: http://localhost:8080/realms/CollaryAuthorization/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/realms/CollaryAuthorization/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/realms/CollaryAuthorization/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/realms/CollaryAuthorization/protocol/openid-connect/certs
+            user-name-attribute: preferred_username
